@@ -22,5 +22,7 @@ module.exports = function(server) {
 
     api.get("/imgs", ctrl.getImgs);
     api.post("/imgs", multer(multerConfig).single("file"), ctrl.insertImg);
+    api.put("/imgs/:id", multer(multerConfig).single("file"), ctrl.updateImg);
+    api.delete("/imgs/:id", ctrl.deleteImg);
 
 }
